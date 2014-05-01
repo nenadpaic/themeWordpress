@@ -1,0 +1,16 @@
+/*
+Theme Name: CCtheme
+Author: CodeCrew
+Author URI: nwebdevelopment.com
+Description: Custom made theme
+Version: 1.0
+
+*/
+
+
+.caret{
+    display: none;
+}
+.open > .dropdown-menu{
+    display: inline-flex;
+}
