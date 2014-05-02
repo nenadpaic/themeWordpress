@@ -25,9 +25,11 @@
 endwhile;
 else:?>
 <p>Nema postova</p>
-<?php endif; ?>
+<?php endif; 
+?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
+
 
 

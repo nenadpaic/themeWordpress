@@ -57,7 +57,7 @@
 		
 		overlayer			: true,	//a layer on the images to prevent the users grab them simply by clicking the right button of their mouse (.camera_overlayer)
 		
-		pagination			: true,
+		pagination			: false,
 		
 		playPause			: true,	//true or false, to display or not the play/pause buttons
 		
@@ -77,7 +77,7 @@
 		
 		slideOn				: 'random',	//next, prev, random: decide if the transition effect will be applied to the current (prev) or the next slide
 		
-		thumbnails			: false,
+		thumbnails			: true,
 		
 		time				: 7000,	//milliseconds between the end of the sliding effect and the start of the nex one
 		
@@ -89,7 +89,7 @@
 
 		onLoaded			: function() {  },	//this callback is invoked when the image on a slide has completely loaded
 		
-		onStartLoading		: function() {  },	//this callback is invoked when the image on a slide start loading
+		onStartLoading		: function() { },	//this callback is invoked when the image on a slide start loading
 		
 		onStartTransition	: function() {  }	//this callback is invoked when the transition effect starts
 

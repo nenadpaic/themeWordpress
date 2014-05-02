@@ -25,6 +25,8 @@
     <script type='text/javascript' src='<?php bloginfo('template_url')?>/scripts/jquery.mobile.customized.min.js'></script>
     <script type='text/javascript' src='<?php bloginfo('template_url')?>/scripts/jquery.easing.1.3.js'></script> 
     <script type='text/javascript' src='<?php bloginfo('template_url')?>/scripts/camera.min.js'></script> 
+    <script type='text/javascript' src='<?php bloginfo('template_url')?>/scripts/camera.js'></script> 
+
     
     <script>
 		jQuery(function(){
@@ -86,40 +88,38 @@
 <div class="fluid_container">
         <div class="camera_wrap camera_azure_skin" id="camera_random">
 <?php
-$tepl_dir = get_template_directory_uri();
-
 $slides = array(
-            '<div data-thumb="'. $tepl_dir .'/images/slideshow/1/slide-6-thumb.jpg" data-src="'. $tepl_dir .'/images/slideshow/1/slide-6.jpg">
+            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/slide-6-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/slide-6.jpg">
                 <div class="camera_caption fadeFromBottom">
                     Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
                 </div>
             </div>',
-            '<div data-thumb="'. $tepl_dir .'/images/slideshow/1/PR-TourSeries-thumb.jpg" data-src="'. $tepl_dir .'/images/slideshow/1/PR-TourSeries.jpg">
+            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/PR-TourSeries-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/PR-TourSeries.jpg">
                 <div class="camera_caption fadeFromBottom">
                     Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
                 </div>
             </div>',
-            '<div data-thumb="'. $tepl_dir .'/images/slideshow/1/FSTFT_0-thumb.jpg" data-src="'. $tepl_dir .'/images/slideshow/1/FSTFT_0.jpg">
+            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/FSTFT_0-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/FSTFT_0.jpg">
                 <div class="camera_caption fadeFromBottom">
                     Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
                 </div>
             </div>',
-            '<div data-thumb="'. $tepl_dir .'/images/slideshow/1/PL-Certified_0-thumb.jpg" data-src="'. $tepl_dir .'/images/slideshow/1/PL-Certified_0.jpg">
+            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/PL-Certified_0-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/PL-Certified_0.jpg">
                 <div class="camera_caption fadeFromBottom">
                     Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
                 </div>
             </div>',
-            '<div data-thumb="'. $tepl_dir .'/images/slideshow/1/TOUR-ShortGame-thumb.jpg" data-src="'. $tepl_dir .'/images/slideshow/1/TOUR-ShortGame.jpg">
+            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/TOUR-ShortGame-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/TOUR-ShortGame.jpg">
                 <div class="camera_caption fadeFromBottom">
                     Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
                 </div>
             </div>',
-            '<div data-thumb="'. $tepl_dir .'/images/slideshow/1/PR-DV1-thumb.jpg" data-src="'. $tepl_dir .'/images/slideshow/1/PR-DV1.jpg">
+            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/PR-DV1-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/PR-DV1.jpg">
                 <div class="camera_caption fadeFromBottom">
                     Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
                 </div>
             </div>',
-            '<div data-thumb="'. $tepl_dir .'/images/slideshow/1/slide-5_0-thumb.jpg" data-src="'. $tepl_dir .'/images/slideshow/1/slide-5_0.jpg">
+            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/slide-5_0-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/slide-5_0.jpg">
                 <div class="camera_caption fadeFromBottom">
                     Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
                 </div>
