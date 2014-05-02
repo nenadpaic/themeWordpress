@@ -11,6 +11,7 @@
 
 <?php get_header(); ?>
 <?php //get_template_part(); ?>
+<?php the_post_thumbnail('featured') ?>
 
 <?php if(have_posts()) : while(have_posts()): the_post();
 
