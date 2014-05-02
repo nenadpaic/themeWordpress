@@ -40,6 +40,10 @@
 
 </head>
 <body>
+<div id="gradient">
+
+</div>
+
         <div id="wrapper" >
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
@@ -72,6 +76,7 @@
          ?>
     </div>
 </nav>
+<div class ="content">
 <div class="sub-menu">
 <?php
   if($post->post_parent)
