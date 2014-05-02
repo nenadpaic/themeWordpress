@@ -341,6 +341,7 @@
 	overflow: hidden;
 	position: relative;
 	width: 100%;
+        
 }
 .camera_commands_emboss .camera_thumbs_cont {
 	-moz-box-shadow:
@@ -456,6 +457,9 @@
 }
 .camera_thumbs_cont ul li > img {
 	border-color: 1px solid #000;
+        overflow: hidden;
+        width: 146px;
+        height: 100px;
 }
 /*AMBER SKIN*/
 .camera_amber_skin .camera_prevThumbs div {

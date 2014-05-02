@@ -442,3 +442,4 @@ function cc_validate_settings($input)
 
     return $newinput;
 }
+

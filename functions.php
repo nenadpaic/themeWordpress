@@ -27,3 +27,34 @@ if(function_exists('add_image_size')){
     add_image_size('post-thumb', 200, 125, true);
 }
 
+$option_name = 'cc_theme_options';
+
+$option = get_option($option_name);
+
+function slider(){
+    $option_name = 'cc_theme_options';
+
+$option = get_option($option_name);
+     for ($i=1; $i<count($option)+1; $i++){
+        if (isset($option["slider{$i}"])){
+                $slides[$i] = '<div data-thumb="'.$option["slider{$i}"].'" data-src="'.$option["slider{$i}"].'">
+                                    <div class="camera_caption fadeFromBottom">
+                                        Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
+                                    </div>
+                                 </div>';
+        }
+    }
+    echo '<div class="fluid_container">';
+    echo '<div class="camera_wrap camera_azure_skin" id="camera_random">';
+
+shuffle($slides);
+foreach ($slides as $slides) {
+    echo "$slides\n";
+}
+
+        
+echo "</div><!-- #camera_random -->";
+
+echo "</div><!-- .fluid_container -->";
+
+}

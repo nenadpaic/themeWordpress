@@ -82,56 +82,14 @@
   <ul>
   <?php echo $children; ?>
   </ul>
-  <?php } ?>
+  <?php } 
+
+  ?>
 </div>
-
-<div class="fluid_container">
-        <div class="camera_wrap camera_azure_skin" id="camera_random">
 <?php
-$slides = array(
-            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/slide-6-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/slide-6.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-                </div>
-            </div>',
-            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/PR-TourSeries-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/PR-TourSeries.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-                </div>
-            </div>',
-            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/FSTFT_0-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/FSTFT_0.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-                </div>
-            </div>',
-            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/PL-Certified_0-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/PL-Certified_0.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-                </div>
-            </div>',
-            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/TOUR-ShortGame-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/TOUR-ShortGame.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-                </div>
-            </div>',
-            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/PR-DV1-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/PR-DV1.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-                </div>
-            </div>',
-            '<div data-thumb="'. get_template_directory_uri() .'/images/slideshow/1/slide-5_0-thumb.jpg" data-src="'. get_template_directory_uri() .'/images/slideshow/1/slide-5_0.jpg">
-                <div class="camera_caption fadeFromBottom">
-                    Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-                </div>
-            </div>',
-);
-shuffle($slides);
-foreach ($slides as $slides) {
-    echo "$slides\n";
-}
+    if ($post->post_parent == 0){
+       slider();
+    }
+?>   
 
-        ?>
-        </div><!-- #camera_random -->
-
-    </div><!-- .fluid_container -->
 
