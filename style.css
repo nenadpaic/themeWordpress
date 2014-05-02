@@ -40,14 +40,16 @@ Version: 1.0
     box-shadow: inset 0 -3px 10px rgba(0,0,0,.5);
     font-size: 18px;
 }
-#menu-item-21{
+
+#menu-menu-1 li:nth-child(1){
     background-color: #3F8DE6;
 }
-#menu-item-22{
+
+#menu-menu-1 li:nth-child(2){
     background-color: #5EA939
 }
 
-#menu-item-24{
+#menu-menu-1 li:nth-child(3){
     background-color: #CD371A
 }
 
