@@ -12,6 +12,7 @@ require_once "scripts/scriptsjs.php";
 require_once "scripts/hooks.php";
 
 require_once "include/slider_admin_options.php";
+require_once "include/logo_admin_options.php";
 if(function_exists('register_nav_menus')){
 register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'CCtheme' ),
@@ -82,3 +83,19 @@ register_sidebar(array(
 
 
 ));
+register_sidebar(array(
+    'name' => 'Header section',
+    'id'   => 'headersection',
+    'description' => 'this is header section',
+    'before_widget' => '<div class="widget-header">',
+    'after_widget'  => '</div>',
+
+
+));
+function add_logo(){
+    $cc_logo_option = get_option('cc_theme_logo_options'); ?>
+
+    <a href="<?php bloginfo('home'); ?>"></a> <img src="<?php echo $cc_logo_option['logourl'] ?>" alt="Logo image" /></a>
+
+<?php
+}
