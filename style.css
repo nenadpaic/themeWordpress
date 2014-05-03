@@ -69,7 +69,7 @@ background-repeat: repeat-x;
     margin-right: auto;
     width: 80%;
     margin-top:-130px !important;
-    z-index: 100;
+
     }
  .navbar-default{
    border:none;
@@ -234,10 +234,38 @@ height:20px;
     color: #3F8DE6;
 
     font-weight: bold;
-    
+
     background: #ECEAEF;
     background-clip: padding-box;
     -webkit-border-radius: 7px;
     border-radius: 7px;
     padding-left: 10px;
+}
+#content-post p{
+    font-size: 1.1em;
+    margin: 0.6em 0 1.2em;
+
+}
+#header-widget{
+    padding-right: 20px;
+    text-align: left;
+}
+.widget-header{
+
+}
+#wrapper-header{
+    width: 97%;
+}
+#searchsubmit{
+    background: #5EA939;
+    background-clip: padding-box;
+    border: none;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: inset 0 -3px 10px rgba(0,0,0,.5);
+    box-shadow: inset 0 -3px 10px rgba(0,0,0,.5);
+    color: #FFFFFF;
+    font-size: 12px;
+    height: 24px;
+    width: 60px;
 }
