@@ -48,7 +48,6 @@
 <div class="col-md-4" id="header-widget"><?php dynamic_sidebar('headersection') ?></div>
 </div>
 </div>
-</div>
 	
 
 <div id="gradient">
@@ -105,12 +104,8 @@
     }
 ?>   
 <script >
-	$("#searchsubmit").val('Go');
-	$("#s").attr("placeholder", "Search");
-	$("#s").attr("size", "30");
-	$(".screen-reader-text").html("");
-</script>
-
-            
-
-
+    $("#searchsubmit").val('Go');
+    $("#s").attr("placeholder", "Search");
+    $("#s").attr("size", "30");
+    $(".screen-reader-text").html("");
+</script> 

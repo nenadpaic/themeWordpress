@@ -121,19 +121,25 @@ function side_nav_menu($page_id){
     $args = array(
         'child_of' => $drugi,
         'depth' => 0,
+        'sort_column' => 'post_date',
+        'title_li'=> get_the_title($drugi),
+        'echo' => 0,
     );
-       $test = wp_list_pages($args);
-       echo "<pre>", print_r($test), "</pre>";
+       $meni = wp_list_pages($args);
+       echo "<div class='side_menu'>";
+        echo $meni;
+       echo '</div>';
 
   }
   
 function breadcumb($page_id){
     $svi_roditelji = get_post_ancestors($page_id); 
     krsort($svi_roditelji);
+    $test = '<div id="breadcumb">';
     foreach ($svi_roditelji as $r)
         $test .=  "<a href='". get_permalink($r) ."'>". get_the_title($r) ."</a> / ";
     
-    $test .= get_the_title($page_id);
+    $test .= get_the_title($page_id) . "</div>";
         echo $test; 
 }
 
