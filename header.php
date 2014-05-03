@@ -77,6 +77,7 @@
     </div>
 </nav>
 <div class ="content">
+    <div class="row" id="sub-nav">
 <div class="sub-menu">
 <?php
   if($post->post_parent)
@@ -90,7 +91,7 @@
   <?php } 
 
   ?>
-</div>
+</div></div>
 <?php
     if ($post->post_parent == 0){
        slider();
