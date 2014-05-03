@@ -16,9 +16,9 @@
 
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url')?>/css/camera.css">
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url');?>/css/bootstrap.css"/>
-
     <?php wp_head(); ?>
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css" />
+
 
 
 
@@ -41,21 +41,21 @@
 
 </head>
 <body>
+    <div class="row">
+<div id="wrapper-header">
+<div class="col-md-4" id="logo"><?php add_logo();?></div>
+<div class="col-md-4"></div>
+<div class="col-md-4" id="header-widget"><?php dynamic_sidebar('headersection') ?></div>
+</div>
+</div>
+</div>
+	
+
 <div id="gradient">
 
-    <div class="row">
-        <div id="wrapper-header">
-        <div class="col-md-4" id="logo"><?php add_logo();?></div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4" id="header-widget"><?php dynamic_sidebar('headersection') ?></div>
-    </div>
-        </div>
-        </div>
-
+</div>
 
         <div id="wrapper" >
-            
-            
 <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -67,7 +67,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-
+            <a class="navbar-brand" href="<?php echo home_url(); ?>">
+                <?php bloginfo('name'); ?>
+            </a>
         </div>
      <?php
             wp_nav_menu( array(
@@ -89,27 +91,26 @@
     <div class="row" id="sub-nav">
 <div class="sub-menu">
 <?php
-  if($post->post_parent)
-  $children = wp_list_pages("title_li=&child_of=".$post->post_parent."&echo=0");
-  else
-  $children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
-  if ($children) { ?>
-  <ul>
-  <?php echo $children; ?>
-  </ul>
-  <?php } 
+    nav_bar($post->ID);
+?>
+    </div>
+</div>
 
-  ?>
-</div></div>
-<?php
+    <?php
     if ($post->post_parent == 0){
        slider();
     }
+    else{
+        breadcumb($post->ID);
+    }
 ?>   
-
 <script >
-    $("#searchsubmit").val('Go');
-    $("#s").attr("placeholder", "Search");
-    $("#s").attr("size", "30");
-    $(".screen-reader-text").html("");
+	$("#searchsubmit").val('Go');
+	$("#s").attr("placeholder", "Search");
+	$("#s").attr("size", "30");
+	$(".screen-reader-text").html("");
 </script>
+
+            
+
+
