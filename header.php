@@ -14,44 +14,56 @@
     <title><?php wp_title('-', 'true', 'right');
         bloginfo('name'); ?></title>
 
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url')?>/css/camera.css">
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url');?>/css/bootstrap.css"/>
-    <?php wp_head(); ?>
-    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css" />
-
-
-
-
-    <script type='text/javascript' src='<?php bloginfo('template_url')?>/scripts/jquery.min.js'></script>
-    <script type='text/javascript' src='<?php bloginfo('template_url')?>/scripts/jquery.mobile.customized.min.js'></script>
-    <script type='text/javascript' src='<?php bloginfo('template_url')?>/scripts/jquery.easing.1.3.js'></script> 
-    <script type='text/javascript' src='<?php bloginfo('template_url')?>/scripts/camera.min.js'></script> 
-    <script type='text/javascript' src='<?php bloginfo('template_url')?>/scripts/camera.js'></script> 
-
+   
     
-    <script>
-		jQuery(function(){
-			
-			jQuery('#camera_random').camera({
-				thumbnails: true
-			});
+    <?php wp_head(); ?>
+     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    
+    <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url');?>/css/bootstrap.css"/>
 
-		});
-    </script>
+   
+  <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/flexslider.css" type="text/css"/ media="screen">
+
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css" />
+ 
+  <script type="text/javascript">
+    $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('#carousel').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        itemWidth: 210,
+        itemMargin: 5,
+        asNavFor: '#slider'
+      });
+
+      $('#slider').flexslider({
+        animation: "slide",
+        controlNav: false,
+        animationLoop: false,
+        slideshow: false,
+        sync: "#carousel",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+    });
+  </script>
 
 </head>
 <body>
-    <div class="row">
+<div id="gradient">
+<div class="row" id="logoPosition">
 <div id="wrapper-header">
 <div class="col-md-4" id="logo"><?php add_logo();?></div>
 <div class="col-md-4"></div>
 <div class="col-md-4" id="header-widget"><?php dynamic_sidebar('headersection') ?></div>
 </div>
 </div>
-	
-
-<div id="gradient">
-
 </div>
 
         <div id="wrapper" >
@@ -66,9 +78,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo home_url(); ?>">
-                <?php bloginfo('name'); ?>
-            </a>
+         
         </div>
      <?php
             wp_nav_menu( array(
@@ -87,25 +97,44 @@
     </div>
 </nav>
 <div class ="content">
-    <div class="row" id="sub-nav">
+<div class="row" id="sub-nav">
 <div class="sub-menu">
 <?php
-    nav_bar($post->ID);
-?>
-    </div>
-</div>
+  if($post->post_parent)
+  $children = wp_list_pages("title_li=&child_of=".$post->post_parent."&echo=0");
+  else
+  $children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
+  if ($children) { ?>
+  <ul>
+  <?php echo $children; ?>
+  </ul>
+  <?php } 
 
-    <?php
-    if ($post->post_parent == 0){
-       slider();
-    }
-    else{
-        breadcumb($post->ID);
-    }
-?>   
+  ?>
+  </div>
+</div>
+<?php
+    if ($post->post_parent == 0 && !isset($_GET['s']) && !is_single()){
+
+
+      slider();
+
+   }
+?>  
+  
+  
+
+
+
 <script >
     $("#searchsubmit").val('Go');
     $("#s").attr("placeholder", "Search");
     $("#s").attr("size", "30");
     $(".screen-reader-text").html("");
+
 </script> 
+
+
+
+
+

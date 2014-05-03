@@ -34,30 +34,34 @@ $option = get_option($option_name);
 
 function slider(){
     $option_name = 'cc_theme_options';
-
     $option = get_option($option_name);
+
          for ($i=1; $i<count($option)+1; $i++){
             if (isset($option["slider{$i}"])){
-                    $slides[$i] = '<div data-thumb="'.$option["slider{$i}"].'" data-src="'.$option["slider{$i}"].'">
-                                        <div class="camera_caption fadeFromBottom">
-                                            Camera is a responsive/adaptive slideshow. <em>Try to resize the browser window</em>
-                                        </div>
-                                     </div>';
+                    $slides[$i] = '<li><img src="'.$option["slider{$i}"].'" /></li>';
+
             }
         }
-        echo '<div class="fluid_container">';
-        echo '<div class="camera_wrap camera_azure_skin" id="camera_random">';
+        echo '<div id="container" class="cf"><div id="main" role="main">
+     <div id="slider" class="flexslider"> <ul class="slides">';
 
-    foreach ($slides as $slides) {
-        echo "$slides\n";
-    }
+    foreach ($slides as $slide) {
+        echo "$slide";
+    } 
+    echo "</ul></div>";
 
-        
-    echo "</div><!-- #camera_random -->";
+echo '<div id="carousel" class="flexslider"><ul class="slides">';
 
-    echo "</div><!-- .fluid_container -->";
+     foreach ($slides as $slide) {
+        echo "$slide";
+    }  
+    
+    echo '</ul></div></div></div>
+    ';
 
 }
+
+
 
 function url_prepare($word){
     return strtr($word," ","-");
@@ -75,7 +79,7 @@ register_sidebar(array(
     'name' => 'Left sidebar',
     'id'   => 'leftsidebar',
     'description' => 'this is left sidebar',
-    'before_widget' => '<div>',
+    'before_widget' => '<div class="side_bar_right">',
     'after_widget'  => '</div>',
 
 ));
@@ -155,8 +159,79 @@ register_sidebar(array(
 ));
 function add_logo(){
     $cc_logo_option = get_option('cc_theme_logo_options'); ?>
+                <a href="<?php bloginfo('home'); ?>"></a> <img src="<?php echo $cc_logo_option['logourl'] ?>" alt="Logo image" /></a>
+    <?php
 
-    <a href="<?php bloginfo('home'); ?>"></a> <img src="<?php echo $cc_logo_option['logourl'] ?>" alt="Logo image" /></a>
-
-<?php
 }
+
+function wpbeginner_numeric_posts_nav() {
+
+    if( is_singular() )
+        return;
+
+    global $wp_query;
+
+    /** Stop execution if there's only 1 page */
+    if( $wp_query->max_num_pages <= 1 )
+        return;
+
+    $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+    $max   = intval( $wp_query->max_num_pages );
+
+    /** Add current page to the array */
+    if ( $paged >= 1 )
+        $links[] = $paged;
+
+    /** Add the pages around the current page to the array */
+    if ( $paged >= 3 ) {
+        $links[] = $paged - 1;
+        $links[] = $paged - 2;
+    }
+
+    if ( ( $paged + 2 ) <= $max ) {
+        $links[] = $paged + 2;
+        $links[] = $paged + 1;
+    }
+
+    echo '<div class="navigation"><ul>' . "\n";
+
+    /** Previous Post Link */
+    if ( get_previous_posts_link() )
+        printf( '<li>%s</li>' . "\n", get_previous_posts_link() );
+
+    /** Link to first page, plus ellipses if necessary */
+    if ( ! in_array( 1, $links ) ) {
+        $class = 1 == $paged ? ' class="active"' : '';
+
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+
+        if ( ! in_array( 2, $links ) )
+            echo '<li>…</li>';
+    }
+
+    /** Link to current page, plus 2 pages in either direction if necessary */
+    sort( $links );
+    foreach ( (array) $links as $link ) {
+        $class = $paged == $link ? ' class="active"' : '';
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+    }
+
+    /** Link to last page, plus ellipses if necessary */
+    if ( ! in_array( $max, $links ) ) {
+        if ( ! in_array( $max - 1, $links ) )
+            echo '<li>…</li>' . "\n";
+
+        $class = $paged == $max ? ' class="active"' : '';
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+    }
+
+    /** Next Post Link */
+    if ( get_next_posts_link() )
+        printf( '<li>%s</li>' . "\n", get_next_posts_link() );
+
+    echo '</ul></div>' . "\n";
+
+}
+    ?>
+
+

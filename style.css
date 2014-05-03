@@ -25,7 +25,7 @@ time, mark, audio, video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    margin-top: 0px !important;
+    margin-top: 0 !important;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
@@ -51,12 +51,27 @@ table {
     border-spacing: 0;
 }
 #gradient  {
+height: 245px;
+overflow: hidden;
 margin-top: 0px;
-height:300px;
 width: 100%;
-background-image: url('images/gradient1.png');
+background-image: url('images/gradient1.jpg');
 background-repeat: repeat-x;
 
+}
+
+#logo {
+    margin-left:16%;
+    margin-right:6%;
+
+}
+#logoPosition {
+     padding-top: 20px;
+}
+
+#logo img {
+    width: 250px;
+    height: 70px;      
 }
 .caret{
     display: none;
@@ -67,7 +82,7 @@ background-repeat: repeat-x;
 #wrapper{
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 73%;
     margin-top:-130px !important;
 
     }
@@ -92,7 +107,6 @@ background-repeat: repeat-x;
     text-transform: uppercase;
     box-shadow: inset 0 -3px 10px rgba(0,0,0,.5);
     font-size: 18px;
-
 }
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     background-color:white;
@@ -107,12 +121,10 @@ background-repeat: repeat-x;
     text-align: center;
     margin: 0px;
     text-transform: uppercase;
+    font-size: 14px;
 
-    font-size: 18px;
 }
-.navbar-default .navbar-nav > li > a{
-    color:#fff;
-}
+
 #menu-item-7  li a:active {
    background-color:white;
     -webkit-border-top-left-radius: 7px;
@@ -127,7 +139,7 @@ background-repeat: repeat-x;
     margin: 5px;
     text-transform: uppercase;
     box-shadow: inset 0 -3px 10px rgba(0,0,0,.5);
-    font-size: 18px;
+    font-size: 14px;
 }
 .sub-menu ul li{
     border-radius: 0px;
@@ -155,10 +167,16 @@ background-repeat: repeat-x;
     margin: 0 15px .875em;
 }
 #menu-meni ul li  {
-    margin-bottom:20px;
+    margin-bottom:20px
+}
+#menu-meni a {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
 }
 #menu-meni li:nth-child(1){
-    background-color: #3F8DE6;
+    background-color: #027AC6;
+
 }
 
 #menu-meni li:nth-child(2){
@@ -246,15 +264,11 @@ height:20px;
     margin: 0.6em 0 1.2em;
 
 }
-#header-widget{
-    padding-right: 20px;
-    text-align: left;
-}
-.widget-header{
-
-}
 #wrapper-header{
     width: 97%;
+}
+#header-widget {
+  padding-left: 5%;
 }
 #searchsubmit{
     background: #5EA939;
@@ -268,4 +282,91 @@ height:20px;
     font-size: 12px;
     height: 24px;
     width: 60px;
+}
+.flexslider {
+    margin-bottom: 10px;
+}
+/*
+dodatak darko i mladen
+
+*/
+.side_menu .pagenav{
+                 list-style-type: none;
+                 color: black;
+                 font-weight: bold;
+                 font-size: 1.2em;
+             }
+.side_menu .page_item a{
+    color: #666;
+    border-bottom: 1px dotted black;
+    line-height: 30px;
+    padding: 5px;
+    background-color: #fafafa;
+    font-size: 0.7em;
+}
+
+.side_menu .page_item a:hover{
+    color: #666;
+    text-decoration: none;
+    background-color: #f7eedb;
+}
+
+.side_menu .page_item ul{
+    padding: 0 0 0 20px;
+}
+
+#breadcumb{
+}
+
+/*
+
+navigacija paginacije
+*/
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    color: #fff;
+    text-decoration:none;
+}
+
+.navigation li {
+    display: inline;
+}
+
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+    background-color: #6FB7E9;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 12px;
+    padding: 0.75rem;
+}
+
+.navigation li a:hover,
+.navigation li.active a {
+    background-color: #3C8DC5;
+}
+#sidebar-page{
+    padding: 15px 20px 15px 20px;
+}
+.widgettitle{
+    background-color: #ECECEC;
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#E0E0E0),to(#CCCCCC));
+    background-image: -webkit-linear-gradient(top,#E0E0E0,#CCCCCC);
+    background-image: -moz-linear-gradient(top,#E0E0E0,#CCCCCC);
+    background-image: -o-linear-gradient(top,#E0E0E0,#CCCCCC);
+    background-image: linear-gradient(to bottom,#E0E0E0,#CCCCCC);
+    color: #000000;
+    font-size: 12px;
+    line-height: 18px;
+    margin-top: 0;
+    padding: 7px 15px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.side_bar_right{
+    margin-bottom: 15px;
 }

@@ -1,7 +1,7 @@
 <?php
 if(have_comments()):
 ?>
-<h4><?php comments_number("No comments", "One comment", "% Comments"); ?></h4>
+<h1><?php comments_number("No comments", "One comment", "% Comments"); ?></h1>
     <?php wp_list_comments(); ?>
 <?php endif; ?>
 <?php
